@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>EpyApp | Login</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script src="js/datos.js"></script>
+</head>
+
+<body>
+
+
+    <div class="container-fluid fondo">
+
+        <div class="col-sm-3">
+
+        </div>
+
+        <div class="col-sm-6">
+            <div class="page-header text-center">
+                <img src="img/logo.png" width="100%" />
+            </div>
+            <!--
+                
+                   
+    
+                
+                    <button type="submit" name="enviar" onclick="guardarDatos()" value="Guardar datos" class="btn btn-lg btn-success btn-block"><span class="glyphicon ok-circle"></span> Ingresar</button>
+                -->
+            <form class="form-signin" method="post" action="index.html">
+                <h2 class="form-signin-heading">Ingresa tus Datos</h2>
+                <label for="nombre" class="sr-only">Nombre</label>
+                <input type="text" id="nombre" class="form-control" placeholder="Nombre de Usuario" required autofocus/>
+                <br>
+
+                <label for="contrasenia" class="sr-only">Contraseña</label>
+                <input type="password" id="password" class="form-control" placeholder="Contraseña" required />
+                <br>
+                <button type="submit" onclick="guardarDatos()" value="Ingresar Datos" class="btn btn-lg btn-success btn-block"> Ingresa </button>
+                <hr>
+            </form>
+            <form class="form-sigin" method="post" action="registro.html">
+                <button type="submit" value="Registrarse" class="btn btn-lg btn-warning btn-block"> Registrate </button>
+            </form>
+
+
+        </div>
+
+        <div class="col-sm-3">
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

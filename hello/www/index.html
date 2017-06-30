@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>.:: Bienvenido ::.</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <script src="jquery-1.11.1.js" type="text/javascript"></script>
+    <script src="highcharts.js"></script>
+    <link rel="stylesheet" href="css/template.css">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <script src="js/datos.js"></script>
+</head>
+
+
+
+
+
+
+<body>
+
+
+    <!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+
+
+
+
+
+    <title>EpyApp</title>
+    </head>
+
+
+    <body onload="recuperarDatos()">
+        <nav class="navbar navbar-inverse navbar-custom">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header navbar-custom">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                    <a class="navbar-brand" href="index.html"> <span class="glyphicon glyphicon-leaf"></span> EpyApp</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-custom" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-custom">
+                        <li>
+                            <a href="#monitoreo"> <span class="glyphicon glyphicon-screenshot"></span> Monitoreo </a>
+                        </li>
+                        <li>
+                            <a href="#estadisticas"> <span class="glyphicon glyphicon-stats"></span> Estadisticas </a>
+                        </li>
+                        <li>
+                            <a href="perfil.html"> <span class="glyphicon glyphicon-user"></span> Perfil </a>
+                        </li>
+                        <li>
+                            <a href="localizacion.html"> <span class="glyphicon glyphicon-globe"></span> Localización </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right navbar-custom">
+                        <li>
+                            <a id="datos" href="#"> </a>
+                        </li>
+                        <li>
+                            <a href="login.html"> <span class=" glyphicon glyphicon-off"></span> Salir</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- /.navbar-collapse -->
+
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+        <div class="container">
+            <div class="col-sm-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.html"> <span class="glyphicon glyphicon-leaf"></span> EpyApp</a>
+                    </li>
+                    <li class="active"> <span class="glyphicon glyphicon-home"></span> Inicio</li>
+                </ul>
+            </div>
+
+
+            <div class="col-sm-12 jumbotron">
+                <h1><span class="glyphicon glyphicon-user"></span> Bienvenido </h1>
+                <h1 id="datos"> </h1>
+                <hr class="my-4">
+            </div>
+
+
+            <a name="monitoreo">
+                <div class='col-sm-12 ' id='table'>
+                    <div class="col-sm-12 col-md-12">
+                        <h3><span class="glyphicon glyphicon-refresh"></span> RITMO CARDIACO</h3>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="panel panel-card people-panel">
+                            <div class="panel-title">
+                                <h5 class="no-margin m-b">PPM </h5>
+                            </div>
+                            <div class="panel-body">
+                                <div id="sensor-moni-text" style="height:330px;">
+                                    <h1>{{people_count}} <span class="glyphicon glyphicon-heart"></span> </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='col-sm-12 col-md-8'>
+                        <div class="panel panel-card">
+                            <div class="panel-title">
+                                <h2 class='no-margin m-b'><span class="glyphicon glyphicon-ok"></span> Monitor del Ritmo Cardiaco</h2>
+                            </div>
+
+                            <div class="panel-body">
+                                <div id="sensor-mem-area-d3" style="height:330px;"></div>
+                            </div>
+                        </div>
+                    </div>
+            </a>
+            <a name="estadisticas">
+                <div class='col-sm-12 col-md-12'>
+                    <div class="panel panel-card">
+                        <div class="panel-title">
+                            <h2 class='no-margin m-b'> <span class="glyphicon glyphicon-signal"></span> Estadisticas Historicas</h2>
+                        </div>
+                        <div class="panel-body">
+                            <div id="sensor-count-multi-d3" style="height:400px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+        </div>
+        </a>
+
+
+
+        <script src='./javascripts/d3.v3.min.js'></script>
+        <script src='./javascripts/jquery.min.js'></script>
+        <script src='./javascripts/bootstrap.min.js'></script>
+        <script src='./javascripts/vue.min.js'></script>
+
+        <script src='./javascripts/integrateIndex.js'></script>
+        <!--<script src='./javascripts/experimentIndex.js'></script>-->
+    </body>
+
+
+
+</html>

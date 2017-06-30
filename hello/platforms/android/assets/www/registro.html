@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>.:: Registro EpyApp ::.</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/template.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/datos.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-custom">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header navbar-custom">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="#"> <span class=" glyphicon glyphicon-leaf"></span> EpyApp</a>
+            </div>
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-custom" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-custom">
+                    <li>
+                        <a href="#myModal"> <span class="glyphicon glyphicon-info-sign"></span> Información </a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right navbar-custom">
+                    <li>
+                        <a href="login.html"> <span class=" glyphicon glyphicon-off"></span> Salir</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+
+        <div class="col-md-12">
+            <ul class="breadcrumb">
+                <li><a href="#"><span class=" glyphicon glyphicon-leaf"></span> EpyApp</a></li>
+                <li class="active"> <span class=" glyphicon glyphicon-phone"></span> Registro</li>
+            </ul>
+        </div>
+
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="#" class="list-group-item active"> <span class="glyphicon glyphicon-comment"></span> ¿Cómo Funciona? </a>
+                <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-info-sign"></span> Información</a>
+            </div>
+        </div>
+        <!--MODAL-->
+        <div id="myModal" class="modal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title"> <span class="glyphicon glyphicon-comment"></span> Información</h4>
+                    </div>
+                    <div class="modal-body">
+                        <img src="img/manilla.png" alt="" class="center-block" width="75%">
+                        <ul>
+                            <li>La aplicación funciona a partir lo los datos capturados por la manilla Gear Fit 2 de Samsung, con Estadisticas Información EpyApp logra monitorizar en tiempo real el ritmo cardiaco de un paciente permitiendole ver su estado
+                                actual e historico a partir de una serie de estadísticas. </li>
+                        </ul>
+                        <br>
+                        <strong> <span class="glyphicon glyphicon-screenshot"></span>  Monitoreo</strong>
+                        <img src="img/monitoreo.png" alt="" class="center-block" width="100%">
+                        <strong> <span class="glyphicon glyphicon-stats"></span> Estadísticas</strong>
+                        <img src="img/estadisticas.png" alt="" class="center-block" width="100%">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal"> <span class="glyphicon glyphicon-share-alt"></span>  Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9 jumbotron">
+            <h1><span class="glyphicon glyphicon-phone"></span> Formulario de Registro EpyApp</h1>
+            <hr class="my-4">
+            <br>
+
+            <form class="form-horizontal" method="post" action="index.html">
+                <fieldset>
+                    <div class="form-group">
+
+                        <legend><span class="glyphicon glyphicon-user"></span> Datos Personales</legend>
+                        <div class="form-group">
+                            <label for="nombre" class="col-sm-3 control-label">Nombre Completo</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="nombre" placeholder="Nombre Completo Paciente" required autofocus>
+                            </div>
+                            <label for="contrasenia" class="col-sm-2 control-label">Contraseña</label>
+                            <div class="col-sm-3">
+                                <input type="password" class="form-control" id="contrasenia" required autofocus placeholder="Contraseña">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="fecha" class="col-sm-3 control-label">Fecha de Nacimiento</label>
+                            <div class="col-sm-3">
+                                <input type="date" class="form-control" id="fecha" required autofocus>
+                            </div>
+
+
+                            <label for="sexo" class="col-sm-2 control-label">Sexo</label>
+                            <div class="col-sm-3">
+                                <select class="form-control" id="sexo" required autofocus>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="Masculino">Masculino</option>
+                                  
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="peso" class="col-sm-3 control-label">Peso (Kg)</label>
+                            <div class="col-sm-3">
+                                <input type="number" class="form-control" id="peso" autofocus required placeholder="Peso (Kg)">
+                            </div>
+
+
+                            <label for="edad" class="col-sm-2 control-label">Edad (Años)</label>
+                            <div class="col-sm-3">
+                                <input type="number" class="form-control" id="edad" required autofocus placeholder="Edad (Años)">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">Correo Electrónico</label>
+                            <div class="col-sm-4 input-group">
+                                <span class="input-group-addon">@</span>
+                                <input type="text" class="form-control" name="email" id="email" required autofocus placeholder="Correo Electrónico" />
+                            </div>
+                        </div>
+                        <hr class="my-4">
+
+                        <legend><span class="glyphicon glyphicon-tint"></span> Historial Clínico</legend>
+
+                        <div class="form-group">
+                            <label for="horas" class="col-sm-3 control-label">Horas de Sueño</label>
+                            <div class="col-sm-2">
+                                <input type="number" class="form-control" id="horas" placeholder="Horas de Sueño" required autofocus>
+                            </div>
+                            <label for="bebidas" class="col-sm-3 control-label">Consumo de Bebidas Alcoholicas</label>
+                            <div class="col-sm-2">
+                                <select class="form-control" id="bebidas" required autofocus>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>                                  
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="drogas" class="col-sm-3 control-label">Consumo de Drogas</label>
+                            <div class="col-sm-2">
+                                <select class="form-control" id="drogas" required autofocus>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>                                  
+                                    </select>
+                            </div>
+                            <label for="etapa" class="col-sm-3 control-label">Etapa de Inicio</label>
+                            <div class="col-sm-2">
+                                <select class="form-control" id="etapa" required autofocus>
+                                        <option value="Prenatal">Prenatal</option>
+                                        <option value="Infancia">Infancia</option>
+                                        <option value="Niñez">Niñez</option> 
+                                        <option value="Adolescencia">Adolescencia</option>    
+                                        <option value="Adultez">Adultez</option>
+                                        <option value="Vejez">Vejez</option>                                 
+                                    </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="duracion" class="col-sm-3 control-label">Duración de las Crisis</label>
+                            <div class="col-sm-2">
+                                <select class="form-control" id="duracion" required autofocus>
+                                        <option value="tonico_Clonica">Tónico Clonica</option>
+                                        <option value="ausencia">Ausencia</option>
+                                        <option value="mioclonica">Mioclonica</option>
+                                        <option value="atonica">Atónica</option>                                    
+                                    </select>
+                            </div>
+                            <label for="tomografia" class="col-sm-3 control-label">Tomografía Computarizada</label>
+                            <div class="col-sm-2">
+                                <select class="form-control" id="tomografia" required autofocus>
+                                         <option value="Si">Si</option>
+                                        <option value="No">No</option>                         
+                                    </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="resonancia" class="col-sm-3 control-label">Resonancia Magnética</label>
+                            <div class="col-sm-2">
+                                <select class="form-control" id="resonancia" required autofocus>
+                                         <option value="Si">Si</option>
+                                        <option value="No">No</option>                         
+                                    </select>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                    <hr class="my-4">
+                    <br>
+
+                    <div class="form-group block-center">
+                        <div class="col-sm-12 col-sm-offset-5">
+
+                            <button type="submit" class="btn btn-lg btn-success" onclick="registro()"> <span class="glyphicon glyphicon-ok-circle"></span> Enviar</button>
+
+                        </div>
+                    </div>
+
+
+                </fieldset>
+            </form>
+
+            <div class="form-group block-center">
+                <div class="col-sm-12 col-sm-offset-5">
+                    <form class="form-sigin" method="post" action="login.html">
+                        <button type="submit" class="btn btn-lg btn-warning"> <span class="glyphicon glyphicon-share-alt"></span> Volver</button>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="form-group block-center">
+                <div class="col-sm-12 col-sm-offset-5">
+                    <form class="form-sigin" method="post">
+                        <button type="reset" class="btn btn-lg btn-default"> <span class="glyphicon glyphicon-trash"></span> Limpiar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>.::Perfil EpyApp ::.</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/template.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/datos.js"></script>
+</head>
+
+<body onload="recuperarDatosRegistro()">
+    <nav class="navbar navbar-inverse navbar-custom">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header navbar-custom">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                <a class="navbar-brand" href="index.html"> <span class="glyphicon glyphicon-leaf"></span> EpyApp</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-custom" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-custom">
+                    <li>
+                        <a href="#monitoreo"> <span class="glyphicon glyphicon-screenshot"></span> Monitoreo </a>
+                    </li>
+                    <li>
+                        <a href="#estadisticas"> <span class="glyphicon glyphicon-stats"></span> Estadisticas </a>
+                    </li>
+                    <li>
+                        <a href="perfil.html"> <span class="glyphicon glyphicon-user"></span> Perfil </a>
+                    </li>
+                    <li>
+                        <a href="localizacion.html"> <span class="glyphicon glyphicon-globe"></span> Localización </a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right navbar-custom">
+                    <li>
+                        <a id="datos" href="#"> </a>
+                    </li>
+                    <li>
+                        <a href="login.html"> <span class=" glyphicon glyphicon-off"></span> Salir</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+
+        <div class="col-md-12">
+            <ul class="breadcrumb">
+                <li><a href="#"><span class=" glyphicon glyphicon-leaf"></span> EpyApp</a></li>
+                <li class="active"> <span class=" glyphicon glyphicon-user"></span> Perfil</li>
+            </ul>
+        </div>
+
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="#" class="list-group-item active"> <span class="glyphicon glyphicon-comment"></span> ¿Cómo Funciona? </a>
+                <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-info-sign"></span> Información</a>
+            </div>
+        </div>
+        <!--MODAL-->
+        <div id="myModal" class="modal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title"> <span class="glyphicon glyphicon-comment"></span> Información</h4>
+                    </div>
+                    <div class="modal-body">
+                        <img src="img/manilla.png" alt="" class="center-block" width="75%">
+                        <ul>
+                            <li>La aplicación funciona a partir lo los datos capturados por la manilla Gear Fit 2 de Samsung, con Estadisticas Información EpyApp logra monitorizar en tiempo real el ritmo cardiaco de un paciente permitiendole ver su estado
+                                actual e historico a partir de una serie de estadísticas. </li>
+                        </ul>
+                        <br>
+                        <strong> <span class="glyphicon glyphicon-screenshot"></span>  Monitoreo</strong>
+                        <img src="img/monitoreo.png" alt="" class="center-block" width="100%">
+                        <strong> <span class="glyphicon glyphicon-stats"></span> Estadísticas</strong>
+                        <img src="img/estadisticas.png" alt="" class="center-block" width="100%">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal"> <span class="glyphicon glyphicon-share-alt"></span>  Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9 jumbotron">
+            <div class="container-fluid">
+                <h1><span class="glyphicon glyphicon-phone"></span> Perfil EpyApp</h1>
+                <hr class="my-4">
+                <br>
+                <legend><span class="glyphicon glyphicon-user"></span> Datos Personales</legend>
+                <div class="row">
+                    <label for="nombre" class="col-sm-3 control-label">Nombre de Usuario</label>
+                    <div id="dnombre"></div>
+                </div>
+
+                <div class="row">
+                    <label for="fecha" class="col-sm-3 control-label">Fecha de Nacimiento</label>
+                    <div id="dfecha"></div>
+                </div>
+
+                <div class="row">
+                    <label for="sexo" class="col-sm-3 control-label">Sexo</label>
+                    <div id="dsexo"></div>
+                </div>
+
+                <div class="row">
+                    <label for="peso" class="col-sm-3 control-label">Peso</label>
+                    <div id="dpeso"></div>
+                </div>
+
+                <div class="row">
+                    <label for="edad" class="col-sm-3 control-label">Edad</label>
+                    <div id="dedad"></div>
+                </div>
+
+                <div class="row">
+                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <div id="demail"></div>
+                </div>
+
+            </div>
+            <br>
+
+
+
+
+            <hr class="my-4">
+            <br>
+
+
+        </div>
+</body>
+
+</html>
